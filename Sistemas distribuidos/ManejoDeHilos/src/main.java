@@ -1,3 +1,5 @@
+import java.util.Scanner;
+import java.util.TreeMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -6,11 +8,20 @@ public class main {
 	public static void main(String[] args) {
 		
 		ExecutorService pool=Executors.newFixedThreadPool(3);
-		
-		for (int i = 1; i <= 5; i++) {
-			pool.execute(new Hilo(i,"https://onelinerhub.com/chrome-headless/how-to-save-web-page-to-pdf"));
+
+		Scanner en= new Scanner(System.in);
+		System.out.println("Digita la cantidad de pdfs que decea crear");
+		int entradas=en.nextInt();
+		System.out.println("Ingresa las urls para realizar el procedimiento de transformacion a formato pdf");
+
+		for (int i = 1; i <= entradas; i++) {
+
+			Scanner en2= new Scanner(System.in);
+			String solicitudes=en2.nextLine();
+
+			pool.execute(new Hilo(i,solicitudes));
 		}
-		
+
 		pool.shutdown();
 
 	}
