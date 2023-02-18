@@ -11,9 +11,9 @@ public class main {
 
 		Scanner en= new Scanner(System.in);
 		Scanner en2= new Scanner(System.in);
-		System.out.println("Digita la cantidad de pdfs que decea crear");
+		System.out.println("Digita la cantidad de pdfs que desea crear");
 		int entradas=en.nextInt();
-		System.out.println("Ingresa las urls para realizar el procedimiento de transformacion a formato pdf");
+		System.out.println("Ingresa los nombres de los archivos seguido de las urls para realizar el procedimiento de transformacion a formato pdf");
 
 		for (int i = 1; i <= entradas; i++) {
 
